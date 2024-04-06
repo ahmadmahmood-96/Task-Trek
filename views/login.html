@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="icon" type="x-icon" href="../static/to-do-list-16.png" />
+    <script src="https://kit.fontawesome.com/01b3d246ac.js" crossorigin="anonymous"></script>
+    <title>Task Trek</title>
+</head>
+
+<body>
+    <img class="background" src="../static/test.jpg" alt="Background Image">
+    <img id="dark-change" src="../static/sun.png" alt="Light Mode" />
+    <div id="logo">
+        <img class="logo" src="../static/to-do-list-32.png" alt="To Do Logo" />
+        <span class="logo-name">Task Trek</span>
+    </div>
+
+    <div class="box">
+        <h1>Login</h1>
+        <div class="box1">
+            <form >
+                <label for="email">Enter your email:</label>
+                <br />
+                <input type="email" name="email" id="email" placeholder="Your Email" required />
+                <label for="password">Enter your password:</label>
+                <br />
+                <input type="password" name="password" id="password" placeholder="Your Password" required />
+                <p id="error"></p>
+            </div>
+        </form>
+        <button id="login">Login</button>
+        <p>
+            Don't have an account &nbsp
+            <a href="/signup" class="signup-link">Sign up</a>
+        </p>
+    </div>
+    <script src="../static/login.js"></script>
+</body>
+
+</html>

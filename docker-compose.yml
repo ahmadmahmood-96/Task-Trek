@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+  mongo_db:
+    container_name: db_container
+    image: mongo:latest
+    ports:
+      - 27017:27017  
+    restart: always
+    volumes:
+      - mongo_db:/data/db
+
+  node:
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+      - MONGODB_URI='mongodb://mongo_db:27017'  
+      - DB_NAME='TaskTrek'                      
+    depends_on:
+      - mongo_db
+    volumes:
+      - .:/app
+
+volumes:
+  mongo_db: {}

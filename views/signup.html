@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/signup.css">
+    <link rel="icon" type="x-icon" href="../static/to-do-list-16.png">
+    <title>Signup | Task Trek</title>
+</head>
+
+<body>
+    <img id="dark-change" src="../static/sun.png" alt="Light Mode">
+    <div id="logo">
+        <img class="logo" src="../static/to-do-list-32.png" alt="To Do Logo">
+        <span class="logo-name">Task Trek</span>
+    </div>
+    <div class="container">
+        <div class="box">
+            <h1>Signup Page</h1>
+            <div class="box1" id="box1">
+                <form>
+                    <label for="name">Enter your Full Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Your Full Name" required>
+                    <label for="email">Enter your email:</label>
+                    <input type="email" name="email" id="email" placeholder="abc@gmail.com" required>
+                    <label for="password">Enter your password:</label>
+                    <input type="password" name="password" id="password" placeholder="Your Password" required>
+                    <label for="confirmPassword">Re-enter password:</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"
+                        required>
+                    <p id="error" style="color: #E24D4C;"></p>
+                </form>
+            </div>
+        </div>
+        <div class="box2">
+            <button id="submit">Signup</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+    <script src="../static/signup.js"></script>
+</body>
+
+</html>
