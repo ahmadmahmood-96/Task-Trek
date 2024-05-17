@@ -1,11 +1,20 @@
-FROM node:alpine
+# Use an official Node.js runtime as the parent image
+FROM node:14-alpine
 
+# Set the working directory
 WORKDIR /app
 
-COPY package*.json .
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
+# Install dependencies
 RUN npm install
 
+# Copy the rest of the application code
 COPY . .
 
-CMD [ "node", "app.js" ]
+# Expose the application port
+EXPOSE 3000
+
+# Define the command to run the application
+CMD ["node", "app.js"]
