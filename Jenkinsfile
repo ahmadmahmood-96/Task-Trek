@@ -30,23 +30,9 @@ pipeline {
 
                     // Run the Selenium test script
                     sh 'node test.js'
+                    echo 'build Successful'
                 }
             }
         }
     }
-    
-    post {
-        always {
-            script {
-                // Ensure that services are brought down after the pipeline run
-                sh 'docker-compose -f ${DOCKER_COMPOSE_FILE} down'
-            }
-        }
-        success {
-            echo 'Pipeline completed successfully!'
-        }
-        failure {
-            echo 'Pipeline failed!'
-        }
-    }
-}
+
