@@ -9,8 +9,9 @@ pipeline {
         stage('Build and Deploy') {
             steps {
                 script {
-                    // Build and deploy services using docker-compose
+                    // Bring down any existing services
                     sh 'docker-compose -f ${DOCKER_COMPOSE_FILE} down'
+                    // Build and deploy services
                     sh 'docker-compose -f ${DOCKER_COMPOSE_FILE} up --build -d'
                 }
             }
@@ -18,17 +19,22 @@ pipeline {
     }
 
     post {
-        always {
-            script {
-                // Ensure that services are brought down after the pipeline run
-                sh 'docker-compose -f ${DOCKER_COMPOSE_FILE} down'
-            }
-        }
         success {
             echo 'Deployment successful!'
         }
         failure {
-            echo 'Deployment failed!'
+            script {
+                echo 'Deployment failed! Bringing down services...'
+                // Ensure that services are brought down if the deployment fails
+                sh 'docker-compose -f ${DOCKER_COMPOSE_FILE} down'
+            }
+        }
+        cleanup {
+            script {
+                // Optionally bring down services if needed
+                // sh 'docker-compose -f ${DOCKER_COMPOSE_FILE} down'
+                echo 'Cleanup stage (optional).'
+            }
         }
     }
 }
