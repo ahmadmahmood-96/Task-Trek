@@ -25,8 +25,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
 // MongoDB Setup
-// const URI = 'mongodb://127.0.0.1/TaskTrek';
-const URI = 'mongodb://mongo_db/TaskTrek';
+const URI = 'mongodb://127.0.0.1/TaskTrek';
+// const URI = 'mongodb://mongo_db/TaskTrek';
 mongoose
     .connect(URI)
     .then((res) => {

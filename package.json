@@ -1,12 +1,14 @@
 {
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "chromedriver": "^125.0.0",
     "connect-mongodb": "^0.4.0",
     "connect-mongodb-session": "^2.2.0",
     "consolidate": "^0.16.0",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "mongoose": "^7.1.1",
+    "selenium-webdriver": "^4.21.0",
     "swig": "^1.4.2"
   },
   "scripts": {
