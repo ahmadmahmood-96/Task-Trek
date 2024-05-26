@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: task-trek-service
+  labels:
+    app: task-trek
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 3000
+  selector:
+    app: task-trek
